@@ -8,39 +8,37 @@ import {
 
 const {height, width} = Dimensions.get('window')
 
-module.exports ={
+module.exports = {
   line: {
     flex: 1,
     height: 0.4,
     opacity:0.5,
     backgroundColor: 'darkgray',
   },
-  cell_container: {
+  highlightBlock: {
     flex: 1,
     backgroundColor: 'white',
     padding: 10,
-    marginLeft: 5,
-    marginRight: 5,
-    marginVertical: 3,
-    borderColor: '#dddddd',
-    borderStyle: null,
-    borderWidth: 0.5,
-    borderRadius: 2,
-    shadowColor: 'gray',
-    shadowOffset: {width:0.5, height: 0.5},
-    shadowOpacity: 0.4,
-    shadowRadius: 1,
-    elevation: 2
+    marginBottom: 10,
+    borderTopColor: '#dddddd',
+    borderTopWidth: 0.5,
+    borderBottomColor: '#dddddd',
+    borderBottomWidth: 0.5,
   },
-  listView_container:{
+  listViewContainer: {
+    flex: 1,
+    paddingTop: 10,
+    paddingBottom: 50,
+    backgroundColor: '#f3f3f4',
+  },
+  webViewContainer: {
     flex: 1,
     backgroundColor: '#f3f3f4',
   },
   backgroundColor: '#f3f3f4',
-  listView_height: (height - (20 + 40)),
   window_height: height,
   window_width: width,
-  nav_bar_height_ios: 44,
-  nav_bar_height_android: 50,
+  navBarHeightios: 44,
+  navBarHeightandroid: 50,
 
 }

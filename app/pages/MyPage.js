@@ -17,7 +17,8 @@ export default class MyPage extends Component {
     return (
       <View>
         <NavigationBar
-          title='我的'/>
+          title='我的'
+        />
       </View>
     )
   }

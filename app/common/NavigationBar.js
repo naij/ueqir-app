@@ -17,8 +17,8 @@ import {
   View
 } from 'react-native'
 import GlobalStyles from '../assets/styles/GlobalStyles'
-const NAV_BAR_HEIGHT_IOS = GlobalStyles.nav_bar_height_ios
-const NAV_BAR_HEIGHT_ANDROID = GlobalStyles.nav_bar_height_android
+const NAV_BAR_HEIGHT_IOS = GlobalStyles.navBarHeightios
+const NAV_BAR_HEIGHT_ANDROID = GlobalStyles.navBarHeightandroid
 const STATUS_BAR_HEIGHT = 20
 
 const ButtonShape = {
