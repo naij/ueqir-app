@@ -17,13 +17,14 @@ const WEBVIEW_REF = 'webview'
 
 
 export default class WebViewPage extends Component {
+  state = {
+    url: this.props.url,
+    canGoBack: false,
+    title: this.props.title,
+  }
+
   constructor(props) {
     super(props)
-    this.state = {
-      url: this.props.url,
-      canGoBack: false,
-      title: this.props.title,
-    }
   }
 
   onBackPress(e) {

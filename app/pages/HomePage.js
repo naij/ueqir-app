@@ -19,12 +19,31 @@ export default class HomePage extends Component {
 
   constructor(props) {
     super(props)
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+
+    this.ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    })
     this.state = {
-      dataSource: ds.cloneWithRows([
-        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-      ])
+      dataSource: this.ds.cloneWithRows([])
     }
+  }
+
+  async getData() {
+    try {
+      let response = await fetch('https://facebook.github.io/react-native/movies.json')
+      let responseJson = await response.json()
+      return responseJson.movies
+    } catch(error) {
+      console.error(error)
+    }
+  }
+
+  componentDidMount() {
+    this.getData().then(data => {
+      this.setState({
+        dataSource: this.ds.cloneWithRows(data)
+      })
+    })
   }
 
   onSelect() {
@@ -46,13 +65,13 @@ export default class HomePage extends Component {
       }>
         <View style={GlobalStyles.highlightBlock}>
           <Text style={styles.title}>
-            移动页面开发基础知识(2) 300ms点击延时和点击穿透
+            {rowData.title}
           </Text>
           <Text style={styles.description}>
             300毫秒点击延时的由来 在触屏设备上，移动浏览器为了兼容pc站点的使用，会在用户做触摸手势的时候模拟出鼠标事件...
           </Text>
           <Text style={styles.date}>
-            Date: 2017-03-11
+            Date: {rowData.releaseYear}
           </Text>
         </View>
       </TouchableHighlight>

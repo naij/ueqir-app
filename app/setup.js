@@ -7,7 +7,7 @@ import {
 import LayoutPage from './pages/LayoutPage'
 
 
-function setup(){
+function setup() {
   class Root extends Component {
     constructor(props) {
       super(props)
